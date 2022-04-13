@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>JavaScript學習-第三單元</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <h1>JavaScript學習-第三單元</h1>
+        <div class="back-index"><a href="index.html">回到首頁</a></div>
+        <div>
+            <ol type="1">
+                <li>物件Object</li>
+                <li>while迴圈</li>
+                <li>密碼檢驗程式</li>
+            </ol>
+        </div>
+        <div>
+            <p><b>實作之顯示視窗[以下引入JavaScript程式碼]</b></p>
+            <hr/>
+            <script src="index3.js"></script>
+        </div>
+        <div>
+            <p><b>1. 物件</b></p>
+            可以存放很多key(鍵)跟valus(值)的配對<br/>
+            也就是存放的多筆資料都能夠各自有名字
+            (1)定義:<br/>
+            var 物件名稱 = {<br/>
+                key1:value1,<br/>
+                key2:value2,<br/>
+                key2:value2,<br/>
+                ...<br/>
+            };<br/>
+            舉例:定義一個人的物件
+            <div class="result">
+                var person = {<br/>
+                    name:"YuSay",<br/>
+                    age:18,<br/>
+                    is_cute:true<br/>
+                };<br/>
+            </div>
+            <br/>
+            (2)取出物件的值:物件名稱.key名<br/>
+            <div class="result">
+                document.write(person.name);<br/>
+                document.write(person.age);<br/>
+                document.write(person.is_cute);<br/>
+                <hr/>:YuSay18true
+            </div>
+            <br/>
+            (3)物件當中可以寫入函式
+            <div class="result">
+                var person = {<br/>
+                    name:"YuSay",<br/>
+                    age:18,<br/>
+                    is_cute:true,<br/>
+                    print_name:function(){<br/>
+                        document.write(this.name);<br/>
+                    }<br/>
+                };<br/>
+                person.print_name();<br/>
+                <hr/>:YuSay<br/>
+                //this就是本身的意思
+            </div>
+            <br/>
+            (4)表達真實世界的東西<br/>
+            舉例:一部電影
+            <div class="result">
+                var movie = {<br/>
+                    title:"刻在你心底的名字",<br/>
+                    maker:"氧氣電影",<br/>
+                    duration:114,<br/>
+                    actors:[<br/>
+                        {<br/>
+                            name:"陳浩深",<br/>
+                            age:24,<br/>
+                            is_male:true<br/>
+                        },<br/>
+                        {<br/>
+                            name:"增進華",<br/>
+                            age:23,<br/>
+                            is_male:true<br/>
+                        }<br/>
+                    ]<br/>
+                };<br/>
+            //想要知道電影的資訊時<br/>
+            document.write(movie.actors[0].name);<br/>
+            <hr/>:陳浩深
+            </div>
+        </div>
+        <div>
+            <p><b>2. while迴圈</b></p>
+            (1)定義:<br/>
+            while(條件持續成立){<br/>
+                程式碼<br/>
+            }<br/>
+            舉例:當i小於3執行印出
+            <div class="result">
+                var i = 1;<br/>
+                while(3 > i){<br/>
+                    document.write(i);<br/>
+                    i++;<br/>
+                }<br/>
+                <hr/>:12
+            </div>
+            (2)另一種, 先執行程式, 在判斷是否符合條件要繼續重複執行<br/>
+            do{<br/>
+                程式碼<br/>
+            }while(條件持續成立)<br/>
+        </div>
+        <div>
+            <p><b>密碼檢驗程式</b></p>
+            <div class="result">
+                var password = 123456;<br/>
+                var input;<br/>
+                var times = 3;<br/>
+                <br/>
+                while(password!=input){<br/>
+                    input = prompt("請輸入密碼");<br/>
+                    times--;<br/>
+                    if(0 >= times){<br/>
+                        alert("超過輸入的機會了");<br/>
+                        exit;<br/>
+                    }<br/>
+                }<br/>
+                alert("登入成功");<br/>
+            </div>
+        </div>
+    </body>
+</html>

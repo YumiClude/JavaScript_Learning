@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>JavaScript學習-第二單元</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <h1>JavaScript學習-第二單元</h1>
+        <div class="back-index"><a href="index.html">回到首頁</a></div>
+        <div>
+            <ol type="1">
+                <li>陣列array</li>
+                <li>函式function</li>
+                <li>if判斷</li>
+            </ol>
+        </div>
+        <div>
+            <p><b>實作之顯示視窗[以下引入JavaScript程式碼]</b></p>
+            <hr/>
+            <script src="index2.js"></script>
+        </div>
+        <div>
+            <p><b>1. 陣列array</b></p>
+            裡面可以儲存很多的值 ,用來方面管理資料, 例如同型態的多筆資料<br/>
+            <br/>
+            (1)定義陣列:var 陣列名稱=[值1, 值2, 值3, ...];<br/>
+            舉例:存放學生成績
+            <div class="result">
+                var scores = [80, 30, 89, 70];<br/>
+                document.write(scores);
+                <hr/>:80,30,89,70
+            </div>
+            <br/>
+            (2)取得陣列內容:陣列名稱[要取得的值的順序位子]<br/>
+            舉例:取得第2位學生資料
+            <div class="result">
+                var scores = [80, 30, 89, 70];<br/>
+                document.write(scores[1]);
+                <hr/>:30
+            </div>
+            <br/>
+            (3)修改陣列內容:陣列名稱[要改值的順序位子] = 要改成的值<br/>
+            舉例:修改第二位學生的成績
+            <div class="result">
+                var scores = [80, 30, 89, 70];<br/>
+                scores[1] = 56;<br/>
+                document.write(scores);
+                <hr/>:80,56,89,70
+            </div>
+            <br/>
+            (4)觀念<br/>
+            # 順序是從0開始<br/>
+            # 存放的型態可以是字串, 陣列, 布林值
+            <div class="result">
+                var YuSay = ["girl", 77, true];
+                document.write(YuSay);
+                <hr/>:girl,77,true
+            </div>
+            <br/>
+            (5)取得陣列長度:陣列名稱.length
+            <div class="result">
+                var scores = [80, 30, 89, 70];<br/>
+                document.write(scores.length);
+                <hr/>:4
+            </div>
+        </div>
+        <div>
+            <p><b>1. 函式function</b></p>
+            預先寫好的程式碼, 當我們今天進行呼叫, 函式內的程式碼才會被執行, <br>
+            因此, 函式可以分成兩個部分, 第一個部分是函式的"定義", 再來是函式的"呼叫"<br/>
+            <br/>
+            (1)函式定義:<br/>
+            function 函式名稱(){<br/>
+                要運行的程式內容;<br/>
+            }<br/>
+            舉例:定義一個名叫hello的函式
+            <div class="result">
+                function hello(){<br/>
+                    document.write("你好");<br/>
+                }<br/>
+                <hr/>//如果只有定義, 則函式的內容不會被執行
+            </div>
+            <br/>
+            (2)呼叫函式:函式名稱();<br/>
+            舉例:呼叫hello函式
+            <div class="result">
+                function hello(){<br/>
+                    document.write("你好");<br/>
+                }<br/>
+                hello();
+                <hr/>你好<br/>
+                //此時內容才會被執行
+            </div>
+            <br/>
+            (3)函式可以有傳入值<br/>
+            function 函式名稱(傳入值){<br/>
+                要運行的程式內容;<br/>
+            }<br/>
+            舉例:設定ok函式的傳入值為ans, 並且進行呼叫, 輸入傳入值給函式<br/>
+            <div class="result">
+                function ok(ans){<br/>
+                    document.write("Ans=" + ans);<br/>
+                }<br/>
+                ok("rue");<br/>
+                <hr/>Ans=rue<br/>
+            </div>
+            <br/>
+            (5)傳入值也可以設為多個<br/>
+            小測驗:add函式, 可輸入兩個數並且顯示相加結果<br/>
+            <div class="result">
+                function add(num1, num2){<br/>
+                    ans = num1 + num2;<br/>
+                    document.write("ans="+ans);<br/>
+                }<br/>
+                add(5, 7);<br/>
+                <hr/>ans=12
+            </div>
+            <br/>
+            (6)函式的回傳:return<br/>
+            可以將回傳的值, 覆蓋原先呼叫的位子<br/>
+            舉例:add用回傳的方式印出
+            <div class="result">
+                function add2(num1, num2){<br/>
+                    ans = num1 + num2;<br/>
+                    return ans;<br/>
+                }<br/>
+                document.write("ans2="+ add2(4, 5));
+                <hr/>ans2=9
+            </div>
+        </div>
+        <div>
+            <p><b>3. if判斷</b></p>
+            (1)if判斷:<br/>
+            if(條件成立){<br/>
+                要執行的程式碼;<br/>
+            }<br/>
+            舉例:如果肚子餓, 印出我就去吃飯
+            <div class="result">
+                var hungry = true;<br/>
+                if(hungry){<br/>
+                    document.write("我就去吃飯");<br/>
+                }<br/>
+                <hr/>:我就去吃飯
+            </div>
+            <br/>
+            (2)if..else<br/>
+            if(條件成立){<br/>
+                要執行的程式碼;<br/>
+            }<br/>
+            else{<br/>
+                條件不成立時, 要執行的程式碼;<br/>
+            }<br/>
+            舉例:如果下雨, 我就開車, 否則我就走路
+            <div class="result">
+                var rainy = true;<br/>
+                if(rainy){<br/>
+                    document.write("我會開車");<br/>
+                }<br/>
+                else{<br/>
+                    document.write("我會走路");<br/>
+                }<br/>
+                <hr/>:我會開車
+            </div>
+            <br/>
+            (3)if..else if..else<br/>
+            if(條件成立){<br/>
+                要執行的程式碼;<br/>
+            }<br/>
+            else if(另一條件成立){<br/>
+                要執行的程式碼;<br/>
+            }<br/>
+            else{<br/>
+                條件都不成立時, 要執行的程式碼;<br/>
+            }<br/>
+            舉例:如果考100分得100塊, 考60分得60塊, 不然就是10塊
+            <div class="result">
+                var score = 100;<br/>
+                if(score == 100){<br/>
+                    document.write("考100分得100塊");<br/>
+                }<br/>
+                else if(score >= 60){<br/>
+                    document.write("考60分得60塊");<br/>
+                }<br/>
+                else{<br/>
+                    document.write("得10塊");<br/>
+                }<br/>
+                <hr/>:考100分得100塊<br/>
+                如果前面的條件已符合, 就不會再去執行後面的程式
+            </div>
+            <br/>
+            (4)/&&(且:有否為否)、||(或:有真為真)、!(反面)
+            <div class="result">
+                var score = 100;<br/>
+                var rainy = true;<br/>
+                if(score==100 && rainy){<br/>
+                    document.write("考100分得100塊且我會開車");<br/>
+                }<br/>
+                else if(score==100 || rainy){<br/>
+                    document.write("考100分得100塊或是我會開車");<br/>
+                }<br/>
+                else if(score==100 || !rainy){<br/>
+                    document.write("考100分得100塊或是我會走路");<br/>
+                }<br/>
+                <hr/>:考100分得100塊且我會開車
+            </div>
+            <br/>
+            (5)小測驗:max_num函式可以傳入三個數, 並且回傳最大值
+            <div class="result">
+                function max_num(num1, num2, num3){<br/>
+                    if(num1 >num2 && num1 > num3){<br/>
+                        return ("最大值為="+ num1);<br/>
+                    }<br/>
+                    else if(num2 >num1 && num2 > num3){<br/>
+                        return("最大值為="+ num2);<br/>
+                    }<br/>
+                    else{<br/>
+                        return("最大值為="+ num3);<br/>
+                    }<br/>
+                }<br/>
+                document.write(max_num(3,6,4));<br/>
+                <hr/>:最大值為=6
+            </div>
+        </div>
+    </body>
+</html>

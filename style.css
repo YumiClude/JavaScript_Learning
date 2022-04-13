@@ -1,0 +1,39 @@
+@import "calculator.css";
+
+.back-index{
+    position: fixed;
+    background-color: rgb(161, 161, 221);
+    top: 0px;
+    right: 0px;
+    margin: 10;
+    border-radius: 0px 0px 0px 20px;
+}
+.back-index:hover{
+    background-color: rgb(148, 148, 219);
+}
+
+
+body{
+    background-color: antiquewhite;
+    height: 4930px;
+}
+
+h1{
+    color: rgb(88, 88, 228);
+}
+
+div{
+    margin: 10px;
+    padding: 10px;
+    color:antiquewhite;
+    background-color: rgb(131, 131, 221);
+    border-radius: 10px;
+
+}
+
+.result{
+    background-color: rgb(117, 117, 226);
+    color: antiquewhite;
+    margin: 5px;
+    padding: 5px;
+}
