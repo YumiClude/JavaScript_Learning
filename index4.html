@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<thml>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>JavaScript學習-第四單元</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <bidy>
+        <div class="back-index"><a href="index.html">回到首頁</a></div>
+        <h1>JavaScript學習-第四單元</h1>
+        <div>
+            <ol type="1">
+                <li>For迴圈</li>
+                <li>問答程式</li>
+                <li>2維陣列</li>
+                <li>巢狀迴圈</li>
+                <li>class模板</li>
+            </ol>
+        </div>
+        <div><p><b>以下引入JavaScript程式碼</b></p><hr/><script src="index4.js"></script></div>
+        <div>
+            <p><b>1. For迴圈</b></p>
+            基本上For迴圈等於While, 只是For迴圈比較簡潔一些.<br/>
+            (1)定義<br/>
+            for(變數; 判斷式; 跑完一次要做){<br/>
+                程式碼;<br/>
+            }<br/>
+            舉例:印出數字0~9
+            <div class="result">
+                for(var i = 0; 10>i; i++){<br/>
+                    document.write(i);<br/>
+                 }<br/>
+                 <hr/>:0123456789
+            </div>
+            <br/>
+            (2)想要取得陣列所有的值時, 我們也可以利用迴圈<br/>
+            舉例:有三個朋友("小黑", "小黃", "小綠"), 我們要依序印出來<br/>
+            <div class="result">
+                var friends = ["小黑", "小黃", "小綠"];<br/>
+                for(var q = 0; friends.length > q; q++){<br/>
+                    document.write(friends[q]);<br/>
+                }<br/>
+                <hr/>:小黑小黃小綠
+            </div>
+            <br/>
+        </div>
+        <div>
+            <p><b>2. 問答程式</b></p>
+            <div class="result">
+                var questions = [</br/>
+                    {</br/>
+                        prompt:"香蕉的顏色?(a)Red(b)Blue(c)Yello",</br/>
+                        answer:"c"</br/>
+                    },</br/>
+                    {</br/>
+                        prompt:"Color of 草莓?(a)Red(b)Blue(c)Yello",</br/>
+                        answer:"a"</br/>
+                    },</br/>
+                    {</br/>
+                        prompt:"1m=?cm(a)1(b)10(c)100",</br/>
+                        answer:"c"</br/>
+                    }</br/>
+                ]</br/>
+            </br/>
+                var score = 0;</br/>
+                for(var i=0; questions.length > i; i++){</br/>
+                    var input = prompt(questions[i].prompt)</br/>
+                    if(input==questions[i].answer){</br/>
+                        score++;</br/>
+                        alert("答對了")</br/>
+                    }</br/>
+                    else{</br/>
+                        alert("答錯了")</br/>
+                    }</br/>
+                }</br/>
+                alert("總共答對了"+score+"題")</br/>
+                <hr/>://結果請把原始檔的註解拿掉
+            </div>
+        </div>
+        <div>
+            <p><b>3. 2維陣列</b></p>
+            (1)如果我們在陣列中又寫陣列, 為變成2維陣列<br/>
+            舉例:設定一個0~9的2維陣列<br/>
+            <div class="result">
+                var number=[<br/>
+                [1, 2, 3],<br/>
+                [4, 5, 6],<br/>
+                [7, 8, 9],<br/>
+                [0]<br/>
+                ];<br/>
+                <br/>
+                //取得陣列:第一個值<br/>
+                document.write(number[0][0]);<br/>
+                <hr/>:1
+            </div>
+            (2)取得2維陣列中, 所有的值<br/>
+            <div class="result">
+                for(var p=0; number.length >p; p++){
+                    for(var q=0; number[p].length >q; q++){
+                        document.write(number[p][q]);
+                    }
+                }
+                 <hr/>:1<br/>
+                 2<br/>
+                 3<br/>
+                 4<br/>
+                 5<br/>
+                 6<br/>
+                 7<br/>
+                 8<br/>
+                 9<br/>
+                 0<br/>
+            </div>
+        </div>
+        <br/>
+        <div>
+            <p><b>4. 巢狀迴圈</b></p>
+            (1)迴圈中又寫迴圈<br/>
+            舉例:設定一個外層0~3,內層0~2的巢狀迴圈<br/>
+            <div class="result">
+                for(var i=0; 4 > i; i++){
+                    for(var j = 0; 3>j; j++){
+                        document.write("i:"+i+"j:"+j);
+                    }
+                }
+                <hr/>:i:0j:0<br/>
+                i:0j:1<br/>
+                i:0j:2<br/>
+                i:1j:0<br/>
+                i:1j:1<br/>
+                i:1j:2<br/>
+                i:2j:0<br/>
+                i:2j:1<br/>
+                i:2j:2<br/>
+                i:3j:0<br/>
+                i:3j:1<br/>
+                i:3j:2<br/>
+            </div>
+        </div>
+        <br/>
+        <div>
+            <p><b>5. class模板</b></p>
+            創建一個模板, 可以方便的創建物件<br/>
+            (1)定義<br/>
+            class 模板名稱{<br/>
+                constructor(變數1, 變數2, 變數3..){<br/>
+                this.變數1 = 設定1;<br/>
+                this.變數2 = 設定2;<br/>
+                this.變數3 = 設定3;<br/>
+                }<br/>
+            }<br/>
+            (2)舉例:創建一個手機模板, 並且傳入值
+            <div class="result">
+                class Phone{<br/>
+                    constructor(number, year, is_will){<br/>
+                        this.number = number;<br/>
+                        this.year = year;<br/>
+                        this.is_will = is_will;<br/>
+                    }<br/>
+                }<br/>
+                var phone1 = new Phone("3333",44,true);<br/>
+                document.write(phone1.number);<br/>
+                document.write(phone1.year);<br/>
+                document.write(phone1.is_will);<br/>
+                <hr/>:333344true
+            </div>
+        </div>
+    </body>
+</thml>
