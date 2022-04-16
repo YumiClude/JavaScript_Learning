@@ -1,39 +1,63 @@
-@import "calculator.css";
-
-.back-index{
-    position: fixed;
-    background-color: rgb(161, 161, 221);
-    top: 0px;
-    right: 0px;
-    margin: 10;
-    border-radius: 0px 0px 0px 20px;
-}
-.back-index:hover{
-    background-color: rgb(148, 148, 219);
-}
-
-
 body{
     background-color: antiquewhite;
-    height: 4930px;
+    color: rgb(39, 34, 34);
 }
 
 h1{
-    color: rgb(88, 88, 228);
+    color: rgb(105, 80, 128);
 }
 
-div{
-    margin: 10px;
-    padding: 10px;
-    color:antiquewhite;
-    background-color: rgb(131, 131, 221);
-    border-radius: 10px;
-
-}
-
-.result{
-    background-color: rgb(117, 117, 226);
+.back-index{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    border-radius: 0px 0px 0px 20px;
+    background-color: rgb(71, 69, 69);
     color: antiquewhite;
-    margin: 5px;
-    padding: 5px;
+    padding: 10px;
+    width: 80px;
+}
+
+.back-index:hover{
+    background-color: rgb(85, 83, 83);
+}
+
+.BG-set{
+    background-color: rgb(112, 93, 129);
+    color: antiquewhite;
+    padding: 20px;
+    margin: 10px;
+}
+
+.input-text-set, .input-textarea-set{
+    margin: 5px 10px 0px 0px ;
+    background-color: antiquewhite;
+    color: rgb(39, 34, 34);
+    border: solid antiquewhite;
+}
+
+.input-text-set{
+    width: 500px;
+}
+
+.input-textarea-set{
+    width: 500px;
+    height: 500px;
+}
+
+.button{
+    background-color: antiquewhite;
+    color: rgb(39, 34, 34);
+    border: solid antiquewhite;
+    margin: 5px 10px 0px 0px ;
+    display: flex;
+    justify-content: center;
+    width: 80px;
+}
+
+.button:hover{
+    background-color: rgb(235, 217, 196);
+    border: solid rgb(235, 217, 196);
 }
